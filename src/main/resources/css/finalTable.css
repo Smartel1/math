@@ -1,0 +1,17 @@
+.right {
+    -fx-background-color: #B0DC7A;
+}
+
+.wrong {
+    -fx-background-color: #dc8174;
+}
+
+.header {
+    -fx-border-color: #496D1D, transparent, #496D1D;
+    -fx-border-width: 0 0 3 0;
+}
+
+.header > .label {
+    -fx-border-radius: 2;
+    -fx-border-color: #B0DC7A;
+}

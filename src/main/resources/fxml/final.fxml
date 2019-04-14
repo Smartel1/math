@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="finalGridPane" prefHeight="700.0" prefWidth="500.0" styleClass="root" stylesheets="@../css/common.css, @../css/finalTable.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.smartel.school.math.controller.FinalController">
+<columnConstraints>
+        <ColumnConstraints percentWidth="100.0" />
+</columnConstraints>
+<rowConstraints>
+        <RowConstraints prefHeight="200" />
+        <RowConstraints prefHeight="150" />
+        <RowConstraints prefHeight="350" />
+</rowConstraints>
+<children>
+        <StackPane>
+                <Button onAction="#showIntroScene" text="В начало" StackPane.alignment="BOTTOM_CENTER" />
+        </StackPane>
+        <StackPane GridPane.rowIndex="1">
+            <VBox alignment="CENTER" spacing="5.0" styleClass="palette">
+                <Label fx:id="finalLabel1" alignment="CENTER">Время истекло</Label>
+                <Label fx:id="finalLabel2" alignment="CENTER">Решено 1 из 10</Label>
+
+            </VBox>
+            <HBox maxHeight="40" prefWidth="500.0" styleClass="header" StackPane.alignment="BOTTOM_CENTER">
+                <Label alignment="CENTER" minWidth="100">№</Label>
+                <Label minWidth="200">правильно
+                    <padding>
+                        <Insets left="15" />
+                    </padding>
+                </Label>
+                <Label minWidth="200">ответ
+                    <padding>
+                        <Insets left="15" />
+                    </padding></Label>
+                <GridPane.margin>
+                    <Insets />
+                </GridPane.margin>
+            </HBox>
+        </StackPane>
+
+        <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="325.0" prefWidth="500.0" styleClass="palette" vbarPolicy="NEVER" GridPane.rowIndex="2">
+            <VBox fx:id="vBox" prefHeight="350.0" prefWidth="500.0" styleClass="palette" />
+        </ScrollPane>
+</children>
+</GridPane>

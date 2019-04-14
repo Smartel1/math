@@ -1,0 +1,23 @@
+[
+      {
+         "imageUrl":"task1.png",
+         "description":"Найдите сумму",
+         "solution":23
+      },
+      {
+         "imageUrl":"task2.png",
+         "description":"Найдите значение выражения",
+         "solution":1
+      },
+      {
+         "imageUrl":"task3.png",
+         "description":"Найдите результат последнего выражения",
+         "solution":14
+      },
+      {
+         "imageUrl":"task4.png",
+         "description":"Найдите результат последнего выражения",
+         "solution":21
+      }
+]
+

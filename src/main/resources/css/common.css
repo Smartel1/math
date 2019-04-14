@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "UA_CC_Spills Proof";
+    src: url('../fonts/16226.ttf');
+}
+
+.button {
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-font-size: 40;
+    -fx-text-fill: #496D1D;
+}
+
+.button:hover {
+    -fx-text-fill: #213409;
+}
+
+.text-field {
+    -fx-background-radius: 10;
+    -fx-background-color: #F5FBEF;
+    -fx-alignment: "CENTER";
+}
+
+.palette {
+    -fx-background-color: #B0DC7A;
+}
+
+.root {
+    -fx-background-color: #F5FBEF;
+    -fx-text-fill: #213409;
+    -fx-font-size: 24;
+    -fx-font-family: "UA_CC_Spills Proof";
+}
+
+.caption {
+    -fx-font-size: 60;
+}
+
+.error {
+    -fx-text-fill: #496D1D;
+}
