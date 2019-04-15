@@ -86,7 +86,7 @@ public class FinalController implements Initializable {
         Stage modalStage = new Stage();
         modalStage.setResizable(false);
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/modal.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/modal.fxml"));
         try {
             Pane pane = fxmlLoader.load();
             modalStage.setScene(new Scene(pane));

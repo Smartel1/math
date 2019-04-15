@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.system.ApplicationHome;
 import org.springframework.context.annotation.Bean;
 import ru.smartel.school.math.entity.Task;
-import ru.smartel.school.math.entity.TestSession;
+import ru.smartel.school.math.entity.TaskSession;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -29,10 +29,5 @@ public class Configuration {
         }
 
         return tasks;
-    }
-
-    @Bean
-    public TestSession testSession(){
-        return new TestSession();
     }
 }

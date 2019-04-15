@@ -3,35 +3,31 @@ package ru.smartel.school.math.service;
 import javafx.util.Pair;
 import org.springframework.stereotype.Service;
 import ru.smartel.school.math.entity.Task;
-import ru.smartel.school.math.entity.TestSession;
+import ru.smartel.school.math.entity.TaskSession;
 
 import java.util.*;
 
 @Service
 public class TestSessionService {
-    private TestSession testSession;
+    private TaskSession taskSession;
 
     private List<Task> tasks;
     private Map<Task, Double> answers;
 
-    public TestSessionService(TestSession testSession, List<Task> tasks) {
-        this.testSession = testSession;
+    public TestSessionService(List<Task> tasks) {
         this.tasks = tasks;
     }
 
     public void initTaskSession(int tasksCount){
-        //todo найти другой способ проверки на уникальность задания
-        Set<Task> tasksToUse = new HashSet<>(tasksCount);
+        taskSession = new TaskSession();
 
         //Выбираем taskCount случайных заданий и включаем их в сессию, добавляя ответ null
         do {
             int randomIndex = new Random().nextInt(tasksCount);
-            if (tasksToUse.add(tasks.get(randomIndex))){
-                testSession.addTask(tasks.get(randomIndex));
-            }
-        } while (testSession.getTaskAnswers().size() < tasksCount);
+            taskSession.addTask(tasks.get(randomIndex));
+        } while (taskSession.getTaskAnswers().size() < tasksCount);
 
-        testSession.setCurrentTaskIndex(0);
+        taskSession.setCurrentTaskIndex(0);
     }
 
     public int getTotalTasksCount(){
@@ -39,20 +35,20 @@ public class TestSessionService {
     }
 
     public void answer(Double answer) {
-        testSession.answer(answer);
+        taskSession.answer(answer);
     }
 
     public void toNextTask() {
-        testSession.setCurrentTaskIndex(testSession.getCurrentTaskIndex() + 1);
+        taskSession.setCurrentTaskIndex(taskSession.getCurrentTaskIndex() + 1);
     }
 
     public Task getCurrentTask(){
-        int currentTask = testSession.getCurrentTaskIndex();
-        if (testSession.getTasksCount() == currentTask) return null;
-        return testSession.getTaskAnswers().get(currentTask).getKey();
+        int currentTask = taskSession.getCurrentTaskIndex();
+        if (taskSession.getTasksCount() == currentTask) return null;
+        return taskSession.getTaskAnswers().get(currentTask).getKey();
     }
 
     public List<Pair<Task, Double>> getTaskAnswers() {
-        return testSession.getTaskAnswers();
+        return taskSession.getTaskAnswers();
     }
 }
